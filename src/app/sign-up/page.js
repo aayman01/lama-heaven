@@ -1,12 +1,12 @@
-'use client'
+"use client";
 import { useState } from "react";
 import Image from "next/image";
 
-const LoginPage = () => {
+const SignUp = () => {
+  const[name, setName] = useState("")
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  
   return (
     <div className="flex min-h-screen">
       {/* Left side */}
@@ -25,7 +25,24 @@ const LoginPage = () => {
         <h2 className="text-xl mb-4 text-black font-bold">Log In</h2>
 
         {/* Form */}
-        <form  className="w-full max-w-sm">
+        <form className="w-full max-w-sm">
+          <div className="mb-4">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium mb-1 text-black"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-3 py-2 border rounded-lg text-black"
+              placeholder="Your Name"
+              required
+            />
+          </div>
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -79,4 +96,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignUp;
