@@ -8,7 +8,7 @@ import React from "react";
 export default function HomePage() {
   return (
     <div>
-      {/* <Banner></Banner> */}
+      <Banner></Banner>
       <div className="max-w-7xl mx-auto sm:px-4">
         <AboutSection />
         <div className="w-[1110px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
