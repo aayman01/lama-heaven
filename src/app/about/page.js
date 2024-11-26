@@ -1,4 +1,6 @@
-<div>
+export default function About() {
+  return (
+    <div>
       <div className='bg-white'>
         <div className='flex ml-52 pt-48 pb-36'>
           <div>
@@ -46,3 +48,12 @@
         </div>
       </div>
     </div>
+  );
+}
+
+
+
+
+
+
+
