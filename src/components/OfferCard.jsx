@@ -9,7 +9,7 @@ const OfferCard = () => {
           width={300}
           height={340}
           alt="room image"
-          className="transform transition-transform duration-300 group-hover:scale-110"
+          className=" transform transition-transform duration-300 group-hover:scale-110"
         />
       </div>
       <h2 className="mt-9 text-xl font-semibold">
