@@ -2,14 +2,14 @@ import Image from "next/image";
 import image1 from "/public/1.png";
 const OfferCard = () => {
   return (
-    <div className="group text-black dark:text-white">
+    <div className="group text-black border-2 border-secondary p-3 rounded-lg">
       <div className="overflow-hidden">
         <Image
           src={image1}
           width={300}
           height={340}
           alt="room image"
-          className="transform transition-transform duration-300 group-hover:scale-110"
+          className=" transform transition-transform duration-300 group-hover:scale-110"
         />
       </div>
       <h2 className="mt-9 text-xl font-semibold">

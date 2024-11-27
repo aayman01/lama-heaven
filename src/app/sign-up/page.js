@@ -22,7 +22,7 @@ const SignUp = () => {
 
       <div className="w-1/2 flex flex-col items-center justify-center bg-white px-10">
         <h1 className="text-3xl font-bold mb-3 text-black">LamaHeaven</h1>
-        <h2 className="text-xl mb-4 text-black font-bold">Log In</h2>
+        <h2 className="text-xl mb-4 text-black font-bold">Sign Up</h2>
 
         {/* Form */}
         <form className="w-full max-w-sm">
