@@ -1,6 +1,5 @@
-import Footer from "@/components/Footer";
-import OfferCard from "@/components/OfferCard";
-import HomePage from "@/pages/HomePage";
+import Footer from "../components/Footer.jsx";
+import HomePage from "../pages/HomePage";
 
 export default function Home() {
   return (

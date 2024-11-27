@@ -2,10 +2,10 @@ import AboutSection from "@/components/About";
 import DeliciousFood from "@/components/DeliciousFood";
 import OfferCard from "@/components/OfferCard";
 import Banner from "@/components/shared/Banner";
-import Image from "next/image";
 import React from "react";
 
-export default function HomePage() {
+export default async function HomePage() {
+
   return (
     <div>
       <Banner></Banner>
