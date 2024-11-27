@@ -1,5 +1,6 @@
 import AboutSection from "@/components/About";
 import DeliciousFood from "@/components/DeliciousFood";
+import FeaturedRooms from "@/components/FeaturedRooms";
 import OfferCard from "@/components/OfferCard";
 import Banner from "@/components/shared/Banner";
 import Image from "next/image";
@@ -17,7 +18,12 @@ export default function HomePage() {
           ))}
         </div>
         <DeliciousFood />
+
+        <FeaturedRooms></FeaturedRooms>
+        
       </div>
     </div>
-  );
+  )
 }
+//   );
+// }
