@@ -57,7 +57,7 @@ const Banner = () => {
       ))}
 
       
-      <div className="absolute bottom-4 right-4  space-x-4">
+      <div className="absolute bottom-6 right-6  space-x-4">
         <button
           onClick={handlePrev}
           className="bg-white text-black p-3 rounded-full shadow-lg hover:bg-[#80ff80] transition"
