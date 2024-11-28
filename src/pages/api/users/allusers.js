@@ -1,11 +1,10 @@
-import { dbConnect } from "../../../lib/mongoDb";
+import { connectDB } from "../../../lib/mongo";
 
 export default async function handler(req, res) {
-  await dbConnect(); // Connect to the database
-
+  const db = await connectDB();
   if (req.method === "GET") {
     try {
-      const db = client.db("Lama-heaven");
+      //   const db = await client.db("Lama-heaven");
       const users = await db.collection("users").find().toArray(); // Get all users from the "users" collection
       res.status(200).json(users);
     } catch (error) {
