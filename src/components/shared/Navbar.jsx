@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { logOut } from "../../app/actions/index";
 
 
 const Navbar = () => {
@@ -118,6 +119,11 @@ const Navbar = () => {
                   >
                     Sign In
                   </Link>
+                  <div className="block px-4 py-2 text-sm text-red-500 font-medium">
+                    <form action={logOut}>
+                      <button type="submit">Log out</button>
+                    </form>
+                  </div>
                 </div>
               )}
             </div>
