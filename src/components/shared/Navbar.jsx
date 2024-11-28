@@ -14,7 +14,7 @@ const Navbar = () => {
   const toggleProfileDropdown = () => setProfileDropdownOpen((prev) => !prev);
 
   return (
-    <nav className="fixed top-0 left-0 w-full backdrop-blur-md bg-opacity-70 bg-transparent z-50 shadow-lg ">
+    <nav className="fixed top-0 left-0 w-full backdrop-blur-md bg-opacity-70 bg-transparent  z-50 shadow-lg ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center gap-x-2">
@@ -32,44 +32,44 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-6">
   <Link
     href="/"
-    className={`relative text-sm font-medium dark:text-white text-gray-900 ${
+    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
       pathname === "/"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white after:transition-all after:duration-300`}
+    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
   >
     Home
   </Link>
 
   <Link
     href="/rooms"
-    className={`relative text-sm font-medium dark:text-white text-gray-900 ${
+    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
       pathname === "/rooms"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white after:transition-all after:duration-300`}
+    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
   >
     Rooms
   </Link>
 
   <Link
     href="/about"
-    className={`relative text-sm font-medium dark:text-white text-gray-900 ${
+    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
       pathname === "/about"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white after:transition-all after:duration-300`}
+    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
   >
     About
   </Link>
 
   <Link
     href="/contact"
-    className={`relative text-sm font-medium dark:text-white text-gray-900 ${
+    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
       pathname === "/contact"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white after:transition-all after:duration-300`}
+    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
   >
     Contact
   </Link>
@@ -80,7 +80,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <Link
               href="/book-room"
-              className="px-4 py-2 bg-[#00b300] text-white text-sm font-medium rounded-md shadow hover:bg-[#00b300] transition duration-300 dark:bg-[#00b300] dark:hover:bg-[#00b300]"
+              className="px-4 py-2 bg-[#00b300] text-gray-100 text-sm font-medium rounded-md shadow hover:bg-[#00b300] transition duration-300 dark:bg-[#00b300] dark:hover:bg-[#00b300]"
             >
               Book Room
             </Link>
@@ -107,7 +107,7 @@ const Navbar = () => {
               </button>
 
               {profileDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 shadow-lg rounded-md">
+                <div className="absolute right-0 mt-2 w-40 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-md">
                   <Link
                     href="/dashboard"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
@@ -126,7 +126,7 @@ const Navbar = () => {
 
             <button
               onClick={toggleMenu}
-              className="block md:hidden text-gray-900 dark:text-white focus:outline-none"
+              className="block md:hidden text-gray-900 dark:text-gray-100 focus:outline-none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -151,44 +151,44 @@ const Navbar = () => {
            <div className="flex flex-col justify-center space-y-3 w-fit ">
   <Link
     href="/"
-    className={`relative text-sm font-medium dark:text-white  text-gray-900 ${
+    className={`relative text-sm font-medium dark:text-gray-100  text-gray-900 ${
       pathname === "/"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white after:transition-all after:duration-300`}
+    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
   >
     Home
   </Link>
 
   <Link
     href="/rooms"
-    className={`relative text-sm font-medium dark:text-white text-gray-900 ${
+    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
       pathname === "/rooms"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white after:transition-all after:duration-300`}
+    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
   >
     Rooms
   </Link>
 
   <Link
     href="/about"
-    className={`relative text-sm font-medium dark:text-white text-gray-900 ${
+    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
       pathname === "/about"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white after:transition-all after:duration-300`}
+    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
   >
     About
   </Link>
 
   <Link
     href="/contact"
-    className={`relative text-sm font-medium dark:text-white text-gray-900 ${
+    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
       pathname === "/contact"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-white after:transition-all after:duration-300`}
+    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
   >
     Contact
   </Link>
