@@ -3,7 +3,7 @@ import Image from "next/image";
 const DeliciousFood = () => {
   return (
     <div className="bg-white">
-      <div className="flex items-center justify-center pt-48 pb-36">
+      <div className="flex items-center justify-center pt-48 pb-16">
         <div>
           <Image
             width={200}

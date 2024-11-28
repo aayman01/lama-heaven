@@ -1,12 +1,32 @@
-'use client'
-import { useState } from "react";
+"use client";
 import Image from "next/image";
+import SocialLogin from "../../components/shared/SocialLogin";
+// import { doCredentialLogin } from "../actions";
+import { useRouter } from "next/navigation";
+import {doCredentialLogin} from "../actions/index"
+import { useState } from "react";
+
 
 const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const router = useRouter();
+  const [error, setError] = useState('');
 
-  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const formData = new FormData(e.target);
+      const response = await doCredentialLogin(formData)
+      if(response?.error){
+        setError(response?.error.message)
+      }else{
+        router.push('/')
+      }
+    } catch (error) {
+      console.error(error);
+      setError("Check your credentials")
+    }
+  };
+
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-secondary">
       {/* Left side */}
@@ -25,10 +45,10 @@ const LoginPage = () => {
         <h1 className="text-2xl md:text-3xl font-bold mb-3 text-black">
           LamaHeaven
         </h1>
-        <h2 className="text-lg md:text-xl mb-4 text-black font-bold">Log In</h2>
+        <h2 className="text-lg md:text-xl mb-4 text-black font-bold">Log in</h2>
 
         {/* Form */}
-        <form className="w-full max-w-xs md:max-w-sm">
+        <form onSubmit={handleSubmit} className="w-full max-w-xs md:max-w-sm">
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -38,13 +58,12 @@ const LoginPage = () => {
             </label>
             <input
               type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
               className="w-full px-3 py-2 border rounded-lg text-black"
               placeholder="Your Email"
               required
             />
+            <p className="text-sm text-red-500">{error}</p>
           </div>
           <div className="mb-6">
             <label
@@ -55,13 +74,12 @@ const LoginPage = () => {
             </label>
             <input
               type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
               className="w-full px-3 py-2 border rounded-lg text-black"
               placeholder="Your Password"
               required
             />
+            <p className="text-sm text-red-500">{error}</p>
           </div>
           <button
             type="submit"
@@ -77,6 +95,8 @@ const LoginPage = () => {
             Sign up
           </a>
         </p>
+        <p>- or -</p>
+        <SocialLogin />
       </div>
     </div>
   );

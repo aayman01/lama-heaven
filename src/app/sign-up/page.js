@@ -1,10 +1,37 @@
-'use client'
+"use client";
 import Image from "next/image";
-import { FcGoogle } from "react-icons/fc";
-import { socialLogin } from "../actions";
+import SocialLogin from "../../components/shared/SocialLogin";
+import { useRouter } from "next/navigation";
 
 const SignUp = () => {
- 
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const formData = new FormData(e.target);
+      const name = formData.get("name");
+      const email = formData.get("email");
+      const password = formData.get("password");
+
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+        }),
+      });
+      console.log(response)
+      response.status === 201 && router.push('/login')
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-secondary">
       {/* Left side */}
@@ -23,9 +50,11 @@ const SignUp = () => {
         <h1 className="text-2xl md:text-3xl font-bold mb-3 text-black">
           LamaHeaven
         </h1>
-        <h2 className="text-lg md:text-xl mb-4 text-black font-bold">Log In</h2>
+        <h2 className="text-lg md:text-xl mb-4 text-black font-bold">
+          Create your account
+        </h2>
         {/* Form */}
-        <form className="w-full max-w-xs md:max-w-sm">
+        <form onSubmit={handleSubmit} className="w-full max-w-xs md:max-w-sm">
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -37,7 +66,6 @@ const SignUp = () => {
               type="text"
               id="name"
               name="name"
-              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-3 py-2 border rounded-lg text-black"
               placeholder="Your Name"
               required
@@ -54,7 +82,6 @@ const SignUp = () => {
               type="email"
               id="email"
               name="email"
-              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-3 py-2 border rounded-lg text-black"
               placeholder="Your Email"
               required
@@ -71,7 +98,6 @@ const SignUp = () => {
               type="password"
               id="password"
               name="password"
-              onChange={(e) => setPassword(e.target.value)}
               className="w-full px-3 py-2 border rounded-lg text-black"
               placeholder="Your Password"
               required
@@ -85,11 +111,7 @@ const SignUp = () => {
           </button>
         </form>
         <p className="mt-4 text-black font-medium">You can also sign in with</p>
-        <form action={socialLogin}>
-          <button type="submit" name="action" value="google">
-            <FcGoogle className="text-3xl" />
-          </button>
-        </form>
+        <SocialLogin />
       </div>
     </div>
   );
