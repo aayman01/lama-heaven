@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import OfferCard from "@/components/OfferCard";
 
 export default function Home() {
@@ -10,7 +9,7 @@ export default function Home() {
           <OfferCard key={id} id={id} />
         ))}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

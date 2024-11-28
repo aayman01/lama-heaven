@@ -1,6 +1,8 @@
 // import "react-date-range/dist/styles.css"; // main style file
 // import "react-date-range/dist/theme/default.css";
+"use client";
 
+import { useState } from "react";
 import { CgSmartHomeRefrigerator } from "react-icons/cg";
 import { FaHandHoldingMedical, FaPhoneAlt } from "react-icons/fa";
 import { FaBath, FaBed } from "react-icons/fa6";
@@ -22,6 +24,28 @@ import {
 import { PiBowlSteam, PiHairDryerFill } from "react-icons/pi";
 
 const detailsPage = () => {
+  const [adults, setAdults] = useState(1);
+  const [children, setChildren] = useState(0);
+  const [isAdultsInputVisible, setIsAdultsInputVisible] = useState(false);
+  const [isChildrenInputVisible, setIsChildrenInputVisible] = useState(false);
+
+  const handleIncreaseAdults = () => setAdults((prev) => prev + 1);
+  const handleDecreaseAdults = () => {
+    if (adults > 1) setAdults((prev) => prev - 1); // Minimum value is 1
+  };
+
+  const handleIncreaseChildren = () => setChildren((prev) => prev + 1);
+  const handleDecreaseChildren = () => {
+    if (children > 0) setChildren((prev) => prev - 1); // Minimum value is 0
+  };
+
+  // custom field color
+  const customColor =
+    "w-full px-4 py-2 bg-[#1A1C1E] border border-[#80ff80] text-white";
+
+  const customBtnColor =
+    "w-16 text-center bg-transparent text-black border-transparent";
+
   return (
     <div>
       {/* left part   */}
@@ -168,7 +192,148 @@ const detailsPage = () => {
           <h2>From 8,000৳ /night</h2>
         </div>
 
-        <option value="ok">ds</option>
+        {/* form item  */}
+        <div className="bg-gray-900 text-white p-6 max-w-sm mx-auto rounded-lg shadow-md">
+          <h2 className="text-2xl font-bold mb-4">RESERVE:</h2>
+          <p className="text-lg font-semibold mb-6">
+            From <span className="text-yellow-500">8,000৳</span> /night
+          </p>
+          <form>
+            {/* Check-In */}
+            <div className="mb-4 ">
+              <label
+                htmlFor="check-in"
+                className="block text-sm font-medium mb-1"
+              >
+                Check In
+              </label>
+              <input
+                type="date"
+                id="check-in"
+                className={customColor}
+                defaultValue="2024-11-28"
+              />
+            </div>
+
+            {/* Check-Out */}
+            <div className="mb-4">
+              <label
+                htmlFor="check-out"
+                className="block text-sm font-medium mb-1"
+              >
+                Check Out
+              </label>
+              <input
+                type="date"
+                id="check-out"
+                className={customColor}
+                defaultValue="2024-11-29"
+              />
+            </div>
+
+            {/* Adults */}
+            <div className="mb-4">
+              <label className="block text-sm font-medium mb-1">Adults</label>
+              <button
+                type="button"
+                onClick={() => setIsAdultsInputVisible(!isAdultsInputVisible)}
+                className={customColor}
+              >
+                Adults: {adults}
+              </button>
+              {isAdultsInputVisible && (
+                <div className="relative mt-2 bg-[#F8F5F1] border border-collapse rounded-lg p-4">
+                  <div className="flex justify-between items-center">
+                    <button
+                      type="button"
+                      onClick={handleDecreaseAdults}
+                      className={customBtnColor}
+                    >
+                      -
+                    </button>
+                    <input
+                      type="number"
+                      value={adults}
+                      readOnly
+                      className={customBtnColor}
+                    />
+                    <button
+                      type="button"
+                      onClick={handleIncreaseAdults}
+                      className={customBtnColor}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Children */}
+            <div className="mb-4">
+              <label className="block text-sm font-medium mb-1">Children</label>
+              <button
+                type="button"
+                aria-expanded={isChildrenInputVisible}
+                onClick={() =>
+                  setIsChildrenInputVisible(!isChildrenInputVisible)
+                }
+                className={customColor}
+              >
+                Children: {children}
+              </button>
+              {isChildrenInputVisible && (
+                <div className="relative mt-2 bg-[#F8F5F1] border border-collapse rounded-lg p-4">
+                  <div className="flex justify-between items-center">
+                    <button
+                      type="button"
+                      onClick={handleDecreaseChildren}
+                      className={customBtnColor}
+                    >
+                      -
+                    </button>
+                    <input
+                      type="number"
+                      value={children}
+                      readOnly
+                      className={customBtnColor}
+                    />
+                    <button
+                      type="button"
+                      onClick={handleIncreaseChildren}
+                      className={customBtnColor}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Rate */}
+            <div className="mb-4">
+              <label htmlFor="rate" className="block text-sm font-medium mb-1">
+                Selected Rate
+              </label>
+              <select id="rate" className={customColor}>
+                <option>Regular Price</option>
+                <option>Discounted Price</option>
+              </select>
+            </div>
+
+            {/* Total Cost */}
+            <div className="mt-6 border-t border-gray-700 pt-4">
+              <p className="text-lg font-semibold">
+                Total Cost{" "}
+                <span className="text-yellow-500 font-bold float-right">
+                  8,000৳
+                </span>
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <input type="" name="number" placeholder="number" id="" />
       </div>
     </div>
   );
