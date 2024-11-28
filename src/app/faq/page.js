@@ -8,7 +8,7 @@ import { Divide } from "lucide-react"
   
   export default  function faq() {
     return (
-        <div>
+        <div className=" grid grid-cols-1 md:grid-cols-2 p-2 " >
 
         
       <Accordion type="single" collapsible className="w-full">
