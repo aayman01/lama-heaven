@@ -587,7 +587,7 @@ function Page() {
         </div>
       </div>
 
-      <div className="flex lg:flex-row flex-col mb-10">
+      <div className="flex lg:flex-row flex-col pb-10">
         {/* Sidebar Filters */}
         <div className="lg:w-1/4 w-full lg:sticky top-4 bg-[#111] text-white p-6 rounded-lg shadow-md">
           <h2 className="font-semibold text-2xl mb-6 text-center text-gray-300">Filter Rooms</h2>

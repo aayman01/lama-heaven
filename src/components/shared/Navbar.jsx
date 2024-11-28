@@ -25,14 +25,14 @@ const Navbar = () => {
               src="/logo2.png"
               alt="Lama Heaven"
             />
-            <h1 className="text-lg sm:text-xl font-bold text-[#00b300] dark:text-[#00b300]">
+            <h1 className="text-lg sm:text-xl font-bold text-[#00b300] text-[#00b300]">
               Lama Heaven
             </h1>
           </div>
           <div className="hidden md:flex space-x-6">
   <Link
     href="/"
-    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
+    className={`relative text-sm font-medium text-gray-100  ${
       pathname === "/"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
@@ -43,7 +43,7 @@ const Navbar = () => {
 
   <Link
     href="/rooms"
-    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
+    className={`relative text-sm font-medium text-gray-100  ${
       pathname === "/rooms"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
@@ -54,7 +54,7 @@ const Navbar = () => {
 
   <Link
     href="/about"
-    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
+    className={`relative text-sm font-medium text-gray-100  ${
       pathname === "/about"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
@@ -65,7 +65,7 @@ const Navbar = () => {
 
   <Link
     href="/contact"
-    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
+    className={`relative text-sm font-medium text-gray-100  ${
       pathname === "/contact"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
@@ -80,7 +80,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <Link
               href="/book-room"
-              className="px-4 py-2 bg-[#00b300] text-gray-100 text-sm font-medium rounded-md shadow hover:bg-[#00b300] transition duration-300 dark:bg-[#00b300] dark:hover:bg-[#00b300]"
+              className="px-4 py-2 bg-[#00b300] text-gray-100 text-sm font-medium rounded-md shadow hover:bg-[#00b300] transition duration-300 bg-[#00b300] hover:bg-[#00b300]"
             >
               Book Room
             </Link>
@@ -107,16 +107,16 @@ const Navbar = () => {
               </button>
 
               {profileDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-md">
+                <div className="absolute right-0 mt-2 w-40 bg-gray-100 bg-gray-800 shadow-lg rounded-md">
                   <Link
                     href="/dashboard"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-gray-200 hover:bg-gray-700"
                   >
                     Dashboard
                   </Link>
                   <Link
                     href="/login"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-gray-200 hover:bg-gray-700"
                   >
                     Sign In
                   </Link>
@@ -126,7 +126,7 @@ const Navbar = () => {
 
             <button
               onClick={toggleMenu}
-              className="block md:hidden text-gray-900 dark:text-gray-100 focus:outline-none"
+              className="block md:hidden  text-gray-100 focus:outline-none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -151,7 +151,7 @@ const Navbar = () => {
            <div className="flex flex-col justify-center space-y-3 w-fit ">
   <Link
     href="/"
-    className={`relative text-sm font-medium dark:text-gray-100  text-gray-900 ${
+    className={`relative text-sm font-medium text-gray-100   ${
       pathname === "/"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
@@ -162,7 +162,7 @@ const Navbar = () => {
 
   <Link
     href="/rooms"
-    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
+    className={`relative text-sm font-medium text-gray-100  ${
       pathname === "/rooms"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
@@ -173,7 +173,7 @@ const Navbar = () => {
 
   <Link
     href="/about"
-    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
+    className={`relative text-sm font-medium text-gray-100  ${
       pathname === "/about"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"
@@ -184,7 +184,7 @@ const Navbar = () => {
 
   <Link
     href="/contact"
-    className={`relative text-sm font-medium dark:text-gray-100 text-gray-900 ${
+    className={`relative text-sm font-medium text-gray-100  ${
       pathname === "/contact"
         ? "after:w-full"
         : "hover:after:w-full after:w-0"

@@ -1,31 +1,31 @@
-"use client";
-import { useState } from "react";
+'use client'
 import Image from "next/image";
+import { FcGoogle } from "react-icons/fc";
+import { socialLogin } from "../actions";
 
 const SignUp = () => {
-  const[name, setName] = useState("")
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+ 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex flex-col md:flex-row min-h-screen bg-secondary">
       {/* Left side */}
-      <div className="w-1/2">
+      <div className="w-full md:w-1/2">
         <Image
           width={800}
           height={400}
           src="/assets/login5.jpg"
-          className="w-full h-full object-cover"
+          className="w-full h-60 md:h-full object-cover"
           alt="Login Image"
-        ></Image>
+        />
       </div>
 
-      <div className="w-1/2 flex flex-col items-center justify-center bg-white px-10">
-        <h1 className="text-3xl font-bold mb-3 text-black">LamaHeaven</h1>
-        <h2 className="text-xl mb-4 text-black font-bold">Log In</h2>
-
+      {/* Right side */}
+      <div className="w-full md:w-1/2 flex flex-col items-center justify-center px-6 md:px-10 py-16">
+        <h1 className="text-2xl md:text-3xl font-bold mb-3 text-black">
+          LamaHeaven
+        </h1>
+        <h2 className="text-lg md:text-xl mb-4 text-black font-bold">Log In</h2>
         {/* Form */}
-        <form className="w-full max-w-sm">
+        <form className="w-full max-w-xs md:max-w-sm">
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -36,7 +36,7 @@ const SignUp = () => {
             <input
               type="text"
               id="name"
-              value={name}
+              name="name"
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-3 py-2 border rounded-lg text-black"
               placeholder="Your Name"
@@ -53,7 +53,7 @@ const SignUp = () => {
             <input
               type="email"
               id="email"
-              value={email}
+              name="email"
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-3 py-2 border rounded-lg text-black"
               placeholder="Your Email"
@@ -70,7 +70,7 @@ const SignUp = () => {
             <input
               type="password"
               id="password"
-              value={password}
+              name="password"
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-3 py-2 border rounded-lg text-black"
               placeholder="Your Password"
@@ -79,18 +79,17 @@ const SignUp = () => {
           </div>
           <button
             type="submit"
-            className="w-full px-4 py-2 bg-blue-500 text-white rounded-lg font-bold hover:bg-white hover:text-blue-500 hover:border-blue-500 border-2"
+            className="w-full px-4 py-2 bg-primary text-white rounded-lg font-bold hover:bg-secondary hover:text-white hover:border-white border-2 border-primary"
           >
-            Log In
+            Sign Up
           </button>
         </form>
-
-        <p className="mt-4 text-gray-400">
-          Don’t have an account?{" "}
-          <a href="/signup" className="text-blue-500">
-            Sign up
-          </a>
-        </p>
+        <p className="mt-4 text-black font-medium">You can also sign in with</p>
+        <form action={socialLogin}>
+          <button type="submit" name="action" value="google">
+            <FcGoogle className="text-3xl" />
+          </button>
+        </form>
       </div>
     </div>
   );
