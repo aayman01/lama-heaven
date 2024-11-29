@@ -2,7 +2,7 @@
 // import "react-date-range/dist/theme/default.css";
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CiWifiOff, CiWifiOn } from "react-icons/ci";
 import { FaHandHoldingMedical, FaPhoneAlt } from "react-icons/fa";
 import { FaBath, FaBed } from "react-icons/fa6";
@@ -26,18 +26,19 @@ import {
 import { PiBowlSteam } from "react-icons/pi";
 
 const DetailsPage = () => {
+  const today = new Date().toISOString().split("T")[0];
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const formattedTomorrow = tomorrow.toISOString().split("T")[0];
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const [isAdultsInputVisible, setIsAdultsInputVisible] = useState(false);
   const [isChildrenInputVisible, setIsChildrenInputVisible] = useState(false);
   const [rate, setRate] = useState("");
 
-  const [checkIn, setCheckIn] = useState(
-    new Date().toISOString().split("T")[0]
-  );
-  const [checkOut, setCheckOut] = useState(
-    new Date().toISOString().split("T")[0]
-  );
+  const [checkIn, setCheckIn] = useState(today);
+  const [checkOut, setCheckOut] = useState(formattedTomorrow); // can not check out in the day of check in
+  const [daysBetween, setDaysBetween] = useState(1); // Default to 1 day difference
 
   const handleIncreaseAdults = () => setAdults((prev) => prev + 1);
   const handleDecreaseAdults = () => {
@@ -58,17 +59,57 @@ const DetailsPage = () => {
   const additionServiceCardDesign =
     "flex gap-6 items-center bg-[#FFF9EF] text-black py-5 px-4 rounded-lg";
 
-  const today = new Date().toISOString().split("T")[0];
-
   const handleChange = (e) => {
     const rate1 = e.target.value;
     setRate(rate1);
   };
 
-  const handleSubmit = (e) => {
+  const handleCheckIn = (e) => {
+    const selectedDate = e.target.value;
+    // console.log(selectedDate);
+    setCheckIn(selectedDate);
+
+    // Automatically adjust check-out if it's earlier than the new check-in
+    const nextDay = new Date(selectedDate);
+    nextDay.setDate(nextDay.getDate() + 1);
+    const formattedNextDay = nextDay.toISOString().split("T")[0];
+
+    if (new Date(checkOut) <= new Date(selectedDate)) {
+      setCheckOut(formattedNextDay); //by default set the date next of the arrival date
+    }
+  };
+
+  // update the state before submitting the form
+  useEffect(() => {
+    calculateDays(checkIn, checkOut);
+  }, [checkIn, checkOut]);
+
+  const handleCheckOut = (e) => {
+    const selectedDate = e.target.value;
+    if (new Date(selectedDate) > new Date(checkIn)) {
+      setCheckOut(selectedDate);
+    } else {
+      alert("Check-Out date must be after Check-In date.");
+    }
+  };
+
+  const calculateDays = (start, end) => {
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+    // console.log(start);
+    // console.log(end);
+    const differenceInTime = endDate - startDate; // Difference in milliseconds
+    const differenceInDays = differenceInTime / (1000 * 60 * 60 * 24); // Convert to days
+    setDaysBetween(differenceInDays);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    calculateDays(checkIn, checkOut);
+
     console.log(rate);
-    console.log(checkIn, checkOut, adults, children);
+    // console.log(checkIn, checkOut, adults, children, daysBetween);
+    console.log(daysBetween);
   };
 
   const fakeData = {
@@ -229,10 +270,10 @@ const DetailsPage = () => {
       {/* right part  */}
       {/* form item  */}
       <div className=" text-black p-6 w-full px-10 py-12 lg:w-[440px] mx-auto rounded-lg shadow-md flex-1">
-        <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold mb-4">RESERVE:</h2>
+        <div className="flex justify-between items-stretch">
+          <h2 className="text-lg font-medium mb-4">Reserve:</h2>
           <p className="text-lg font-semibold mb-6">
-            From <span className="text-[#80ff80]">8,000৳</span> /night
+            <span className="text-[#80ff80]">{fakeData.price}৳</span>/night
           </p>
         </div>
         <form onSubmit={handleSubmit}>
@@ -249,7 +290,8 @@ const DetailsPage = () => {
               id="check-in"
               name="checkIn"
               className={customColor}
-              defaultValue={today}
+              value={checkIn}
+              onChange={handleCheckIn}
             />
           </div>
 
@@ -266,7 +308,9 @@ const DetailsPage = () => {
               id="check-out"
               name="checkOut"
               className={customColor}
-              defaultValue={today}
+              value={checkOut}
+              onChange={handleCheckOut}
+              min={new Date(checkIn).toISOString().split("T")[0]}
             />
           </div>
 
