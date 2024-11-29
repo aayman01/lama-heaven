@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/components/*": ["components/*"], // Alias for the components folder
+      "@/utils/*": ["utils/*"],           // Alias for utils folder (example)
+      "@/lib/*": ["lib/*"],
+       "@/*": ["./lib/*"],                // Alias for lib folder (example)
     }
   }
 }
