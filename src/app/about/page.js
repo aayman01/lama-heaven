@@ -1,9 +1,11 @@
 import { Divide } from "lucide-react";
 import Footer from "../../components/Footer";
+import Navbar from "../../components/shared/Navbar";
 
 const about = () => {
     return (
         <div>
+            <Navbar></Navbar>
             <div
                 className="relative w-full h-[550px] flex items-center justify-center text-center"
                 style={{

@@ -1,10 +1,12 @@
-"use client";
-
+import Image from 'next/image';
 import Footer from "../../components/Footer";
-
+import Navbar from "../../components/shared/Navbar";
 const contact = () => {
+         
+
     return (
         <div>
+            <Navbar></Navbar>
             <div>
                 <div
                     className="relative w-full h-[500px] flex items-center justify-center text-center"
@@ -48,7 +50,7 @@ const contact = () => {
                 <div>
                     <h1 className="text-4xl font-bold pt-40 text-center">Get In Touch</h1>
                 </div>
-                <div className="mt-16">
+                <div className="mt-16 flex">
                     <div className="pt-10 pl-10 w-[615px] h-[500px] bg-white shadow-lg shadow-slate-400 rounded-lg ml-10">
                         <div className="flex mb-5 ">
                             <div className="mr-5  items-center gap-2 border border-gray-300 rounded-lg px-7 py-2">
@@ -95,6 +97,7 @@ const contact = () => {
 
                     </div>
                     <div>
+                        
 
                     </div>
                 </div>
@@ -103,13 +106,10 @@ const contact = () => {
                     <h1 className="text-4xl font-semibold pt-5">Interested In Renting A Room?</h1>
                     <h1 className="pt-5">Don`t hesitate and send us a message.</h1>
                     <button className="px-4 mt-8 py-2  w-[170px] h-12 bg-gradient-to-r from-indigo-950 to-sky-600 text-white font-bold rounded-lg shadow hover:bg-sky-500  focus:outline-none focus:ring-2 focus:ring-yellow-400">
-                            Chat With Us
-                        </button>
+                        Chat With Us
+                    </button>
                 </div>
             </div>
-
-
-
             <Footer></Footer>
         </div>
     );
