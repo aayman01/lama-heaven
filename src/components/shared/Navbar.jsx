@@ -5,15 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { logOut } from "../../app/actions/index";
+import {useSession} from "next-auth/react"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
   const pathname = usePathname();
-
+  const session = useSession();
   const toggleMenu = () => setMenuOpen((prev) => !prev);
   const toggleProfileDropdown = () => setProfileDropdownOpen((prev) => !prev);
 
+  // console.log("user",session?.data.user)
   return (
     <nav className="fixed top-0 left-0 w-full backdrop-blur-md bg-opacity-70 bg-transparent  z-50 shadow-lg ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,52 +33,50 @@ const Navbar = () => {
             </h1>
           </div>
           <div className="hidden md:flex space-x-6">
-  <Link
-    href="/"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    Home
-  </Link>
+            <Link
+              href="/"
+              className={`relative text-sm font-medium text-gray-100  ${
+                pathname === "/"
+                  ? "after:w-full"
+                  : "hover:after:w-full after:w-0"
+              } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+            >
+              Home
+            </Link>
 
-  <Link
-    href="/rooms"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/rooms"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    Rooms
-  </Link>
+            <Link
+              href="/rooms"
+              className={`relative text-sm font-medium text-gray-100  ${
+                pathname === "/rooms"
+                  ? "after:w-full"
+                  : "hover:after:w-full after:w-0"
+              } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+            >
+              Rooms
+            </Link>
 
-  <Link
-    href="/about"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/about"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    About
-  </Link>
+            <Link
+              href="/about"
+              className={`relative text-sm font-medium text-gray-100  ${
+                pathname === "/about"
+                  ? "after:w-full"
+                  : "hover:after:w-full after:w-0"
+              } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+            >
+              About
+            </Link>
 
-  <Link
-    href="/contact"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/contact"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    Contact
-  </Link>
-</div>
-
-
+            <Link
+              href="/contact"
+              className={`relative text-sm font-medium text-gray-100  ${
+                pathname === "/contact"
+                  ? "after:w-full"
+                  : "hover:after:w-full after:w-0"
+              } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+            >
+              Contact
+            </Link>
+          </div>
 
           <div className="flex items-center space-x-4">
             <Link
@@ -154,52 +154,51 @@ const Navbar = () => {
 
         {menuOpen && (
           <div className="md:hidden  rounded-md shadow-lg p-4 mt-2">
-           <div className="flex flex-col justify-center space-y-3 w-fit ">
-  <Link
-    href="/"
-    className={`relative text-sm font-medium text-gray-100   ${
-      pathname === "/"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    Home
-  </Link>
+            <div className="flex flex-col justify-center space-y-3 w-fit ">
+              <Link
+                href="/"
+                className={`relative text-sm font-medium text-gray-100   ${
+                  pathname === "/"
+                    ? "after:w-full"
+                    : "hover:after:w-full after:w-0"
+                } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+              >
+                Home
+              </Link>
 
-  <Link
-    href="/rooms"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/rooms"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    Rooms
-  </Link>
+              <Link
+                href="/rooms"
+                className={`relative text-sm font-medium text-gray-100  ${
+                  pathname === "/rooms"
+                    ? "after:w-full"
+                    : "hover:after:w-full after:w-0"
+                } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+              >
+                Rooms
+              </Link>
 
-  <Link
-    href="/about"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/about"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    About
-  </Link>
+              <Link
+                href="/about"
+                className={`relative text-sm font-medium text-gray-100  ${
+                  pathname === "/about"
+                    ? "after:w-full"
+                    : "hover:after:w-full after:w-0"
+                } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+              >
+                About
+              </Link>
 
-  <Link
-    href="/contact"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/contact"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    Contact
-  </Link>
-</div>
-
+              <Link
+                href="/contact"
+                className={`relative text-sm font-medium text-gray-100  ${
+                  pathname === "/contact"
+                    ? "after:w-full"
+                    : "hover:after:w-full after:w-0"
+                } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+              >
+                Contact
+              </Link>
+            </div>
           </div>
         )}
       </div>

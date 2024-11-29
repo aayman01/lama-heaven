@@ -23,7 +23,7 @@ import {
 } from "react-icons/md";
 import { PiBowlSteam, PiHairDryerFill } from "react-icons/pi";
 
-const detailsPage = () => {
+const DetailsPage = () => {
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
   const [isAdultsInputVisible, setIsAdultsInputVisible] = useState(false);
@@ -410,4 +410,4 @@ const detailsPage = () => {
   );
 };
 
-export default detailsPage;
+export default DetailsPage;
