@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import image1 from "/public/1.png";
 const OfferCard = () => {
   return (
@@ -6,8 +7,8 @@ const OfferCard = () => {
       <div className="overflow-hidden">
         <Image
           src={image1}
-          width={300}
-          height={340}
+          width={360}
+          height={400}
           alt="room image"
           className=" transform transition-transform duration-300 group-hover:scale-110"
         />
@@ -20,9 +21,12 @@ const OfferCard = () => {
         <li>3 Adults & 2 Children size</li>
         <li>Sea view side</li>
       </ul>
-      <button className="w-full py-2 flex justify-center items-center border border-[#009DFF] hover:bg-[#009DFF] text-[#009DFF] hover:text-white">
+      <Link
+        href={"/details"}
+        className="w-full py-2 flex justify-center items-center border border-[#009DFF] hover:bg-[#009DFF] text-[#009DFF] hover:text-white"
+      >
         Book Now
-      </button>
+      </Link>
     </div>
   );
 };
