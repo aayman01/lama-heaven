@@ -48,11 +48,14 @@ const detailsPage = () => {
   };
 
   // custom field color
-  const customColor =
-    "w-full px-4 py-2 bg-[#1A1C1E] border border-[#80ff80] text-white";
+  const customColor = "w-full px-4 py-2 border border-[#80ff80] text-black";
 
   const customBtnColor =
     "w-16 text-center bg-transparent text-black border-transparent";
+
+  const additionServiceCardDesign =
+    "flex gap-6 items-center bg-[#FFF9EF] text-black py-5 px-4 rounded-lg";
+
   const today = new Date().toISOString().split("T")[0];
 
   const handleChange = (e) => {
@@ -68,7 +71,7 @@ const detailsPage = () => {
 
   return (
     // <div className="w-full bg-[#151719]">
-    <div className="flex flex-col lg:flex-row gap-6 w-[360px] md:w-[700px] lg:w-[1110px] mx-auto bg-[#151719] text-white">
+    <div className="flex flex-col lg:flex-row gap-6 w-[360px] md:w-[700px] lg:w-[1110px] mx-auto  text-black">
       {/* left part   */}
       <div className=" px-4 py-4">
         <h2 className="text-xl md:text-2xl lg:text-4xl font-medium md:font-bold py-6">
@@ -172,42 +175,42 @@ const detailsPage = () => {
             Additional Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="flex gap-6 items-center bg-[#1E2022] text-white py-5 px-4 rounded-lg">
+            <div className={additionServiceCardDesign}>
               <FaPhoneAlt className="text-[#80ff80]" />
               <h1>Intercom Facility</h1>
             </div>
 
-            <div className="flex gap-6 items-center bg-[#1E2022] text-white py-5 px-4 rounded-lg">
+            <div className={additionServiceCardDesign}>
               <MdElectricBolt className="text-[#80ff80]" />
               <h1>Private Electricity System</h1>
             </div>
 
-            <div className="flex gap-6 items-center bg-[#1E2022] text-white py-5 px-4 rounded-lg">
+            <div className={additionServiceCardDesign}>
               <MdDining className="text-[#80ff80]" />
               <h1>Gourmet Dining</h1>
             </div>
 
-            <div className="flex gap-6 items-center bg-[#1E2022] text-white py-5 px-4 rounded-lg">
+            <div className={additionServiceCardDesign}>
               <GiTowel className="text-[#80ff80]" />
               <h1>Well-Stocked Toiletries</h1>
             </div>
 
-            <div className="flex gap-6 items-center bg-[#1E2022] text-white py-5 px-4 rounded-lg">
+            <div className={additionServiceCardDesign}>
               <PiBowlSteam className="text-[#80ff80]" />
               <h1>Bathroom Geysers</h1>
             </div>
 
-            <div className="flex gap-6 items-center bg-[#1E2022] text-white py-5 px-4 rounded-lg">
+            <div className={additionServiceCardDesign}>
               <FaHandHoldingMedical className="text-[#80ff80]" />
               <h1>24/7 Medical Care</h1>
             </div>
 
-            <div className="flex gap-6 items-center bg-[#1E2022] text-white py-5 px-4 rounded-lg">
+            <div className={additionServiceCardDesign}>
               <MdEmergency className="text-[#80ff80]" />
               <h1>Helipad on Emergency</h1>
             </div>
 
-            <div className="flex gap-6 items-center bg-[#1E2022] text-white py-5 px-4 rounded-lg">
+            <div className={additionServiceCardDesign}>
               <FaBed className="text-[#80ff80]" />
               <h1>Extra Bed Taking Facility Available</h1>
             </div>
@@ -217,7 +220,7 @@ const detailsPage = () => {
 
       {/* right part  */}
       {/* form item  */}
-      <div className="bg-gray-900 text-white p-6 w-full px-10 py-12 lg:w-[440px] mx-auto rounded-lg shadow-md flex-1">
+      <div className=" text-black p-6 w-full px-10 py-12 lg:w-[440px] mx-auto rounded-lg shadow-md flex-1">
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold mb-4">RESERVE:</h2>
           <p className="text-lg font-semibold mb-6">
@@ -309,7 +312,7 @@ const detailsPage = () => {
               Children: {children}
             </button>
             {isChildrenInputVisible && (
-              <div className="relative mt-2 bg-[#F8F5F1] border border-collapse rounded-lg p-4">
+              <div className="relative mt-2 w-[250px] bg-[#F8F5F1] border border-collapse rounded-lg p-4">
                 <div className="flex justify-between items-center">
                   <button
                     type="button"
@@ -399,7 +402,7 @@ const detailsPage = () => {
 
           <button
             type="submit"
-            className="bg-black mt-4 hover:bg-[#80ff80] w-full text-white border border-transparent py-3 px-5 rounded-lg duration-500"
+            className="border border-[#80ff80] text-black mt-4 hover:bg-[#80ff80] w-full hover:text-white py-3 px-5 rounded-lg duration-500"
           >
             Book Your Stay Now
           </button>
