@@ -9,20 +9,21 @@ export const POST = async(request) =>{
         // console.log(name, email, password);
 
         await dbConnect();
-        console.log("Database connected successfully");
+        // console.log("Database connected successfully");
 
         const existingUser = await User.findOne({ email });
         if (existingUser) {
-          console.error("User already exists:", existingUser);
+          // console.error("User already exists:", existingUser);
           throw new Error("User already exists");
         }
         const hashPassword = await bcrypt.hash(password, 5);
-        console.log("Password hashed successfully");
+        // console.log("Password hashed successfully");
 
         await User.create({
           name,
           email,
           password: hashPassword,
+          role : "user"
         });
         return new NextResponse("User have been created", {
           status: 201,

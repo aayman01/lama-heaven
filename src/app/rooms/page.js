@@ -8,7 +8,8 @@ function Page() {
       id: 1,
       name: "Paharika Deluxe",
       price: 8000,
-      description: "A cozy room with mountain views, perfect for couples seeking comfort and relaxation.",
+      description:
+        "A cozy room with mountain views, perfect for couples seeking comfort and relaxation.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -26,7 +27,8 @@ function Page() {
       id: 2,
       name: "Seaview Suite",
       price: 12000,
-      description: "Luxury suite with a private balcony, offering breathtaking views of the ocean and modern amenities.",
+      description:
+        "Luxury suite with a private balcony, offering breathtaking views of the ocean and modern amenities.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -44,7 +46,8 @@ function Page() {
       id: 3,
       name: "Urban Retreat",
       price: 9000,
-      description: "Modern city-view room with sleek interiors and facilities for business or leisure travelers.",
+      description:
+        "Modern city-view room with sleek interiors and facilities for business or leisure travelers.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -62,7 +65,8 @@ function Page() {
       id: 4,
       name: "Family Haven",
       price: 15000,
-      description: "Spacious room for families, equipped with extra beds and kid-friendly amenities for a perfect stay.",
+      description:
+        "Spacious room for families, equipped with extra beds and kid-friendly amenities for a perfect stay.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -80,7 +84,8 @@ function Page() {
       id: 5,
       name: "Garden Escape",
       price: 10000,
-      description: "Serene garden-facing room with a private patio and luxurious interiors for ultimate tranquility.",
+      description:
+        "Serene garden-facing room with a private patio and luxurious interiors for ultimate tranquility.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -98,7 +103,8 @@ function Page() {
       id: 6,
       name: "Royal Suite",
       price: 20000,
-      description: "Top-tier suite with premium facilities, king-size bed, jacuzzi, and personalized services for guests.",
+      description:
+        "Top-tier suite with premium facilities, king-size bed, jacuzzi, and personalized services for guests.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -116,7 +122,8 @@ function Page() {
       id: 7,
       name: "Sunset Loft",
       price: 11000,
-      description: "Loft-style room with panoramic sunset views, high ceilings, and modern minimalist decor.",
+      description:
+        "Loft-style room with panoramic sunset views, high ceilings, and modern minimalist decor.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -134,7 +141,8 @@ function Page() {
       id: 8,
       name: "Countryside Cabin",
       price: 8500,
-      description: "Rustic cabin room offering peaceful countryside views, ideal for nature lovers and adventurers.",
+      description:
+        "Rustic cabin room offering peaceful countryside views, ideal for nature lovers and adventurers.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -152,7 +160,8 @@ function Page() {
       id: 9,
       name: "Skyline Suite",
       price: 14000,
-      description: "Luxurious room on the top floor with city skyline views, private lounge, and exclusive services.",
+      description:
+        "Luxurious room on the top floor with city skyline views, private lounge, and exclusive services.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -170,7 +179,8 @@ function Page() {
       id: 10,
       name: "Budget Stay",
       price: 5000,
-      description: "Affordable yet comfortable room with basic amenities for budget-conscious travelers.",
+      description:
+        "Affordable yet comfortable room with basic amenities for budget-conscious travelers.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -188,7 +198,8 @@ function Page() {
       id: 11,
       name: "Tropical Paradise",
       price: 10500,
-      description: "Tropical-themed room with vibrant decor, private terrace, and ocean breeze.",
+      description:
+        "Tropical-themed room with vibrant decor, private terrace, and ocean breeze.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -206,7 +217,8 @@ function Page() {
       id: 12,
       name: "Luxury Loft",
       price: 13500,
-      description: "Elegant loft room with panoramic views, high ceilings, and premium furnishings.",
+      description:
+        "Elegant loft room with panoramic views, high ceilings, and premium furnishings.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -224,7 +236,8 @@ function Page() {
       id: 13,
       name: "Mountain View Cottage",
       price: 9500,
-      description: "Charming cottage with a view of the mountains, ideal for nature lovers seeking serenity.",
+      description:
+        "Charming cottage with a view of the mountains, ideal for nature lovers seeking serenity.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -242,7 +255,8 @@ function Page() {
       id: 14,
       name: "City Escape",
       price: 11500,
-      description: "Modern city-center room with stunning views, perfect for business or leisure stays.",
+      description:
+        "Modern city-center room with stunning views, perfect for business or leisure stays.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -260,7 +274,8 @@ function Page() {
       id: 15,
       name: "Woodland Retreat",
       price: 9500,
-      description: "Cozy woodland retreat with rustic interiors, perfect for a quiet getaway in nature.",
+      description:
+        "Cozy woodland retreat with rustic interiors, perfect for a quiet getaway in nature.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -278,7 +293,8 @@ function Page() {
       id: 16,
       name: "Exclusive Penthouse",
       price: 25000,
-      description: "Top-floor penthouse with a private terrace, jacuzzi, and unparalleled views of the skyline.",
+      description:
+        "Top-floor penthouse with a private terrace, jacuzzi, and unparalleled views of the skyline.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -296,7 +312,8 @@ function Page() {
       id: 17,
       name: "Oceanfront Haven",
       price: 16000,
-      description: "Oceanfront room with breathtaking views and luxurious amenities for a relaxing stay.",
+      description:
+        "Oceanfront room with breathtaking views and luxurious amenities for a relaxing stay.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -314,7 +331,8 @@ function Page() {
       id: 18,
       name: "Lakeview Suite",
       price: 13000,
-      description: "Serene suite with beautiful lake views, ideal for those seeking peace and luxury.",
+      description:
+        "Serene suite with beautiful lake views, ideal for those seeking peace and luxury.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -332,7 +350,8 @@ function Page() {
       id: 19,
       name: "Desert Oasis",
       price: 12500,
-      description: "Desert-inspired room with earthy tones, offering a tranquil environment and stunning views.",
+      description:
+        "Desert-inspired room with earthy tones, offering a tranquil environment and stunning views.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -350,7 +369,8 @@ function Page() {
       id: 20,
       name: "Cottage by the Sea",
       price: 14000,
-      description: "Charming seaside cottage with a private balcony, perfect for a peaceful retreat.",
+      description:
+        "Charming seaside cottage with a private balcony, perfect for a peaceful retreat.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -368,7 +388,8 @@ function Page() {
       id: 21,
       name: "Ocean Breeze Suite",
       price: 13000,
-      description: "A luxurious suite with stunning ocean views, perfect for a romantic getaway.",
+      description:
+        "A luxurious suite with stunning ocean views, perfect for a romantic getaway.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -385,7 +406,8 @@ function Page() {
       id: 22,
       name: "City Skyline Retreat",
       price: 12000,
-      description: "Stylish urban room with breathtaking skyline views and modern amenities.",
+      description:
+        "Stylish urban room with breathtaking skyline views and modern amenities.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -402,7 +424,8 @@ function Page() {
       id: 23,
       name: "Forest Escape",
       price: 8500,
-      description: "A secluded room surrounded by nature, offering peace and tranquility for nature lovers.",
+      description:
+        "A secluded room surrounded by nature, offering peace and tranquility for nature lovers.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -419,7 +442,8 @@ function Page() {
       id: 24,
       name: "Luxury Villa",
       price: 20000,
-      description: "An exclusive villa with private amenities, including a pool and garden, ideal for a luxury experience.",
+      description:
+        "An exclusive villa with private amenities, including a pool and garden, ideal for a luxury experience.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -436,7 +460,8 @@ function Page() {
       id: 25,
       name: "Countryside Retreat",
       price: 9500,
-      description: "A peaceful countryside retreat with charming rustic interiors and access to nature trails.",
+      description:
+        "A peaceful countryside retreat with charming rustic interiors and access to nature trails.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -453,7 +478,8 @@ function Page() {
       id: 26,
       name: "Royal Garden Suite",
       price: 15000,
-      description: "A lavish suite surrounded by lush gardens, offering supreme luxury and relaxation.",
+      description:
+        "A lavish suite surrounded by lush gardens, offering supreme luxury and relaxation.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -470,7 +496,8 @@ function Page() {
       id: 27,
       name: "Skyline Penthouse",
       price: 22000,
-      description: "A penthouse suite with panoramic views of the city skyline, offering unparalleled luxury.",
+      description:
+        "A penthouse suite with panoramic views of the city skyline, offering unparalleled luxury.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -487,7 +514,8 @@ function Page() {
       id: 28,
       name: "Secluded Chalet",
       price: 11000,
-      description: "A charming, remote chalet ideal for those looking to escape the hustle and bustle.",
+      description:
+        "A charming, remote chalet ideal for those looking to escape the hustle and bustle.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -504,7 +532,8 @@ function Page() {
       id: 29,
       name: "Urban Loft",
       price: 13500,
-      description: "Modern loft-style room with high ceilings and a spacious feel, ideal for city explorers.",
+      description:
+        "Modern loft-style room with high ceilings and a spacious feel, ideal for city explorers.",
       images: [
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793699/6cd5da9a0b00f4f5c532427a7fc9e8b8_nhxghi.jpg",
         "https://res.cloudinary.com/dpomtzref/image/upload/v1732793694/c562bbb8819082037042eb6101750ad3_slqypi.jpg",
@@ -516,9 +545,8 @@ function Page() {
       size: 400,
       pool: false,
       air_con: true,
-    }
+    },
   ];
-  
 
   const [bedFilter, setBedFilter] = useState("");
   const [guestFilter, setGuestFilter] = useState("");
@@ -528,7 +556,6 @@ function Page() {
   const [currentPage, setCurrentPage] = useState(1);
   const roomsPerPage = 6;
 
-
   const calculateFilteredRooms = () => {
     let filtered = rooms;
 
@@ -536,7 +563,9 @@ function Page() {
       filtered = filtered.filter((room) => room.bed === parseInt(bedFilter));
     }
     if (guestFilter) {
-      filtered = filtered.filter((room) => room.guest === parseInt(guestFilter));
+      filtered = filtered.filter(
+        (room) => room.guest === parseInt(guestFilter)
+      );
     }
     if (priceFilter) {
       filtered = filtered.filter((room) => room.price <= parseInt(priceFilter));
@@ -549,11 +578,10 @@ function Page() {
     return filtered;
   };
 
- 
   useEffect(() => {
     const updatedRooms = calculateFilteredRooms();
     setFilteredRooms(updatedRooms);
-    setCurrentPage(1); 
+    setCurrentPage(1);
   }, [bedFilter, guestFilter, priceFilter, acFilter]);
 
   const handleResetFilters = () => {
@@ -572,7 +600,6 @@ function Page() {
 
   return (
     <div className="bg-black text-white min-h-screen">
-  
       <div className="relative">
         <Image
           className="w-full h-[60vh] object-cover"
@@ -582,18 +609,26 @@ function Page() {
           alt="Banner"
         />
         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50">
-          <h1 className="text-5xl font-semibold text-center">Explore Our Premium Rooms</h1>
-          <p className="text-lg mt-2">Experience luxury and comfort like never before</p>
+          <h1 className="text-5xl font-semibold text-center">
+            Explore Our Premium Rooms
+          </h1>
+          <p className="text-lg mt-2">
+            Experience luxury and comfort like never before
+          </p>
         </div>
       </div>
 
       <div className="flex lg:flex-row flex-col pb-10">
         {/* Sidebar Filters */}
         <div className="lg:w-1/4 w-full lg:sticky top-4 bg-[#111] text-white p-6 rounded-lg shadow-md">
-          <h2 className="font-semibold text-2xl mb-6 text-center text-gray-300">Filter Rooms</h2>
+          <h2 className="font-semibold text-2xl mb-6 text-center text-gray-300">
+            Filter Rooms
+          </h2>
 
           <div className="mb-6">
-            <label className="block text-gray-400 text-sm mb-2">Number of Beds</label>
+            <label className="block text-gray-400 text-sm mb-2">
+              Number of Beds
+            </label>
             <select
               value={bedFilter}
               onChange={(e) => setBedFilter(e.target.value)}
@@ -607,9 +642,10 @@ function Page() {
             </select>
           </div>
 
-         
           <div className="mb-6">
-            <label className="block text-gray-400 text-sm mb-2">Number of Guests</label>
+            <label className="block text-gray-400 text-sm mb-2">
+              Number of Guests
+            </label>
             <select
               value={guestFilter}
               onChange={(e) => setGuestFilter(e.target.value)}
@@ -624,9 +660,10 @@ function Page() {
             </select>
           </div>
 
-      
           <div className="mb-6">
-            <label className="block text-gray-400 text-sm mb-2">Price (Up to)</label>
+            <label className="block text-gray-400 text-sm mb-2">
+              Price (Up to)
+            </label>
             <select
               value={priceFilter}
               onChange={(e) => setPriceFilter(e.target.value)}
@@ -643,14 +680,15 @@ function Page() {
               <option value="12000">৳ 12000</option>
               <option value="13000">৳ 13000</option>
               <option value="14000">৳ 14000</option>
-              <option value="15000">৳ 15000</option>             
+              <option value="15000">৳ 15000</option>
               <option value="16000">৳ 16000</option>
             </select>
           </div>
 
- 
           <div className="mb-6">
-            <label className="block text-gray-400 text-sm mb-2">Air Conditioning</label>
+            <label className="block text-gray-400 text-sm mb-2">
+              Air Conditioning
+            </label>
             <select
               value={acFilter}
               onChange={(e) => setAcFilter(e.target.value)}
@@ -661,7 +699,6 @@ function Page() {
               <option value="Non-AC">Non-AC</option>
             </select>
           </div>
-
 
           <button
             onClick={handleResetFilters}
@@ -699,7 +736,7 @@ function Page() {
                     <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-300">
                       <div>Guests: {room.guest}</div>
                       <div>Beds: {room.bed}</div>
-                      <div>AC: {room.air_con ? "Yes" : "No"}</div> 
+                      <div>AC: {room.air_con ? "Yes" : "No"}</div>
                     </div>
                     <div className="mt-4 flex justify-between">
                       <button className="bg-[#00b300] px-4 py-2 text-white rounded-md hover:bg-[#008000]">
@@ -721,33 +758,32 @@ function Page() {
 
           {/* Pagination */}
           <div className="flex justify-center items-center mt-8 gap-4">
-  <button
-    disabled={currentPage === 1}
-    onClick={() => setCurrentPage((prev) => prev - 1)}
-    className={`px-4 py-2 rounded-md text-white ${
-      currentPage === 1
-        ? "bg-[#222] opacity-50"
-        : "bg-[#00b300] hover:bg-[#008000]" 
-    }`}
-  >
-    Previous
-  </button>
-  <span className="text-white">
-    Page {currentPage} of {totalPages}
-  </span>
-  <button
-    disabled={currentPage === totalPages}
-    onClick={() => setCurrentPage((prev) => prev + 1)}
-    className={`px-4 py-2 rounded-md text-white ${
-      currentPage === totalPages
-        ? "bg-[#222] opacity-50"
-        : "bg-[#00b300] hover:bg-[#008000]" 
-    }`}
-  >
-    Next
-  </button>
-</div>
-
+            <button
+              disabled={currentPage === 1}
+              onClick={() => setCurrentPage((prev) => prev - 1)}
+              className={`px-4 py-2 rounded-md text-white ${
+                currentPage === 1
+                  ? "bg-[#222] opacity-50"
+                  : "bg-[#00b300] hover:bg-[#008000]"
+              }`}
+            >
+              Previous
+            </button>
+            <span className="text-white">
+              Page {currentPage} of {totalPages}
+            </span>
+            <button
+              disabled={currentPage === totalPages}
+              onClick={() => setCurrentPage((prev) => prev + 1)}
+              className={`px-4 py-2 rounded-md text-white ${
+                currentPage === totalPages
+                  ? "bg-[#222] opacity-50"
+                  : "bg-[#00b300] hover:bg-[#008000]"
+              }`}
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
     </div>
