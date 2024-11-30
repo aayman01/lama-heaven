@@ -6,7 +6,7 @@ export default async function handler(req, res) {
     const { name, email , address } = req.body; 
     // const userId = req.query;
     const { _id: userId } = req.query;
-    console.log("user id",userId)
+    // console.log("user id",userId)
 
     if (!userId) {
       return res.status(400).json({ message: "User ID is required" });
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
         { $set: { name: name, email: email, address: address } }
       );
 
-      console.log("Update Result:", result);
+      // console.log("Update Result:", result);
       if (result.matchedCount === 0) {
         return res.status(404).json({ message: "User not found" });
       }

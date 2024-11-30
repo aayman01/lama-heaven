@@ -17,7 +17,7 @@ function Page() {
       return response.data;
     },
   });
-  console.log("rooms" ,rooms)
+  // console.log("rooms" ,rooms)
   const [bedFilter, setBedFilter] = useState("");
   const [guestFilter, setGuestFilter] = useState("");
   const [priceFilter, setPriceFilter] = useState("");
@@ -76,7 +76,7 @@ function Page() {
     </div>;
   }
     return (
-      <div className="bg-black text-white min-h-screen">
+      <div className="bg-white text-white min-h-screen">
         <div className="relative">
           <Image
             className="w-full h-[60vh] object-cover"
@@ -95,21 +95,21 @@ function Page() {
           </div>
         </div>
 
-        <div className="flex lg:flex-row flex-col pb-10">
+        <div className="flex lg:flex-row flex-col pb-10 mt-5 px-2">
           {/* Sidebar Filters */}
-          <div className="lg:w-1/4 w-full lg:sticky top-4 bg-[#111] text-white p-6 rounded-lg shadow-md">
-            <h2 className="font-semibold text-2xl mb-6 text-center text-gray-300">
+          <div className="lg:w-1/4 w-full lg:sticky top-4 bg-gray-200 text-white p-6 rounded-lg shadow-lg">
+            <h2 className="font-semibold text-2xl mb-6 text-center text-black">
               Filter Rooms
             </h2>
 
             <div className="mb-6">
-              <label className="block text-gray-400 text-sm mb-2">
+              <label className="block text-gray-500 text-sm mb-2">
                 Number of Beds
               </label>
               <select
                 value={bedFilter}
                 onChange={(e) => setBedFilter(e.target.value)}
-                className="w-full bg-[#222] text-white p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#00b300]"
+                className="w-full bg-gray-300 text-black p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00b300]"
               >
                 <option value="">Select Beds</option>
                 <option value="1">1 Bed</option>
@@ -120,13 +120,13 @@ function Page() {
             </div>
 
             <div className="mb-6">
-              <label className="block text-gray-400 text-sm mb-2">
+              <label className="block text-gray-500 text-sm mb-2">
                 Number of Guests
               </label>
               <select
                 value={guestFilter}
                 onChange={(e) => setGuestFilter(e.target.value)}
-                className="w-full bg-[#222] text-white p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#00b300]"
+                className="w-full bg-gray-300 text-black p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00b300]"
               >
                 <option value="">Select Guests</option>
                 <option value="1">1 Guest</option>
@@ -138,13 +138,13 @@ function Page() {
             </div>
 
             <div className="mb-6">
-              <label className="block text-gray-400 text-sm mb-2">
+              <label className="block text-gray-500 text-sm mb-2">
                 Price (Up to)
               </label>
               <select
                 value={priceFilter}
                 onChange={(e) => setPriceFilter(e.target.value)}
-                className="w-full bg-[#222] text-white p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#00b300]"
+                className="w-full bg-gray-300 text-black p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00b300]"
               >
                 <option value="">Select Price</option>
                 <option value="5000">৳ 5000</option>
@@ -169,7 +169,7 @@ function Page() {
               <select
                 value={acFilter}
                 onChange={(e) => setAcFilter(e.target.value)}
-                className="w-full bg-[#222] text-white p-3 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#00b300]"
+                className="w-full bg-gray-300 text-black p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00b300]"
               >
                 <option value="">Select</option>
                 <option value="AC">AC</option>
@@ -179,7 +179,7 @@ function Page() {
 
             <button
               onClick={handleResetFilters}
-              className="w-full bg-red-600 text-white p-3 rounded-md mt-4 font-semibold hover:bg-red-700"
+              className="w-full bg-[#00b300] px-4 py-2 text-white rounded-md hover:bg-[#008000]"
             >
               Reset Filters
             </button>
@@ -192,7 +192,7 @@ function Page() {
                 {paginateRooms().map((room) => (
                   <div
                     key={room.id}
-                    className="bg-gradient-to-b from-[#111] to-[#222] shadow-lg rounded-3xl overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+                    className="bg-white shadow-lg rounded-3xl overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
                   >
                     <div className="relative">
                       <Image
@@ -208,18 +208,20 @@ function Page() {
                     </div>
 
                     <div className="p-6">
-                      <h2 className="text-2xl font-bold">{room.name}</h2>
+                      <h2 className="text-2xl font-bold text-black">
+                        {room.name}
+                      </h2>
                       <p className="text-gray-400 mt-2">{room.description}</p>
-                      <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-300">
+                      <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
                         <div>Guests: {room.guest}</div>
                         <div>Beds: {room.bed}</div>
                         <div>AC: {room.air_con ? "Yes" : "No"}</div>
                       </div>
-                      <div className="mt-4 flex justify-between">
-                        <button className="bg-[#00b300] px-4 py-2 text-white rounded-md hover:bg-[#008000]">
+                      <div className="mt-4 flex justify-end">
+                        {/* <button className="bg-[#00b300] px-4 py-2 text-white rounded-md hover:bg-[#008000]">
                           Book Now
-                        </button>
-                        <button className="bg-[#222] px-4 py-2 text-gray-400 rounded-md hover:text-white">
+                        </button> */}
+                        <button className="bg-[#00b300] px-4 py-2 text-white rounded-md hover:bg-[#008000]">
                           Details
                         </button>
                       </div>
@@ -246,7 +248,7 @@ function Page() {
               >
                 Previous
               </button>
-              <span className="text-white">
+              <span className="text-black">
                 Page {currentPage} of {totalPages}
               </span>
               <button
