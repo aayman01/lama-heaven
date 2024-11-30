@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import useAxiosPublic from "../../services/useAxiosPublic";
+import Link from "next/link";
 
 function Page() {
   const axiosPublic = useAxiosPublic();
@@ -26,7 +27,7 @@ function Page() {
   const [currentPage, setCurrentPage] = useState(1);
   const roomsPerPage = 6;
 
- 
+  console.log("check id",filteredRooms)
 
   const calculateFilteredRooms = () => {
     let filtered = rooms;
@@ -211,7 +212,7 @@ function Page() {
                       <h2 className="text-2xl font-bold text-black">
                         {room.name}
                       </h2>
-                      <p className="text-gray-400 mt-2">{room.description}</p>
+                      <p className="text-gray-400 mt-2">{room.description.slice(0,80)}...</p>
                       <div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-500">
                         <div>Guests: {room.guest}</div>
                         <div>Beds: {room.bed}</div>
@@ -221,9 +222,11 @@ function Page() {
                         {/* <button className="bg-[#00b300] px-4 py-2 text-white rounded-md hover:bg-[#008000]">
                           Book Now
                         </button> */}
-                        <button className="bg-[#00b300] px-4 py-2 text-white rounded-md hover:bg-[#008000]">
-                          Details
-                        </button>
+                        <Link href={`/destination/${room._id}}`}>
+                          <button className="bg-[#00b300] px-4 py-2 text-white rounded-md hover:bg-[#008000]">
+                            Details
+                          </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
