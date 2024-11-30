@@ -1,6 +1,7 @@
 import AboutSection from "@/components/About";
 import DeliciousFood from "@/components/DeliciousFood";
 import FeaturedRooms from "@/components/FeaturedRooms";
+import Faq from "@/components/Faq";
 import OfferCard from "@/components/OfferCard";
 import Banner from "@/components/shared/Banner";
 import React from "react";
@@ -20,7 +21,7 @@ export default async function HomePage() {
         <DeliciousFood />
 
         <FeaturedRooms></FeaturedRooms>
-        
+        <Faq></Faq>
       </div>
     </div>
   )

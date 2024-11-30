@@ -31,7 +31,7 @@ export default function FeaturedRooms() {
       <div className="mb-28 ">
         <div className=" flex flex-col items-center justify-center bg-white px-10 my-20 ">
           <h2 className="text-3xl font-bold mb-3 text-black">
-            {" "}
+           
             Featured Rooms
           </h2>
           <h1 className=" text-5xl mb-4 text-black  "> Choose a Better Room</h1>
