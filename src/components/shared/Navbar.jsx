@@ -5,15 +5,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { logOut } from "../../app/actions/index";
+import {signOut, useSession} from "next-auth/react"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
   const pathname = usePathname();
-
+  const session = useSession();
   const toggleMenu = () => setMenuOpen((prev) => !prev);
   const toggleProfileDropdown = () => setProfileDropdownOpen((prev) => !prev);
 
+  // console.log("user",session?.data.user)
   return (
     <nav className="fixed top-0 left-0 w-full backdrop-blur-md bg-opacity-70 bg-transparent  z-50 shadow-lg ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,62 +28,60 @@ const Navbar = () => {
               src="/logo2.png"
               alt="Lama Heaven"
             />
-            <h1 className="text-lg sm:text-xl font-bold text-[#00b300] text-[#00b300]">
+            <h1 className="text-lg sm:text-xl font-bold text-[#00b300]">
               Lama Heaven
             </h1>
           </div>
           <div className="hidden md:flex space-x-6">
-  <Link
-    href="/"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    Home
-  </Link>
+            <Link
+              href="/"
+              className={`relative text-sm font-medium text-gray-100  ${
+                pathname === "/"
+                  ? "after:w-full"
+                  : "hover:after:w-full after:w-0"
+              } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+            >
+              Home
+            </Link>
 
-  <Link
-    href="/rooms"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/rooms"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    Rooms
-  </Link>
+            <Link
+              href="/rooms"
+              className={`relative text-sm font-medium text-gray-100  ${
+                pathname === "/rooms"
+                  ? "after:w-full"
+                  : "hover:after:w-full after:w-0"
+              } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+            >
+              Rooms
+            </Link>
 
-  <Link
-    href="/about"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/about"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    About
-  </Link>
+            <Link
+              href="/about"
+              className={`relative text-sm font-medium text-gray-100  ${
+                pathname === "/about"
+                  ? "after:w-full"
+                  : "hover:after:w-full after:w-0"
+              } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+            >
+              About
+            </Link>
 
-  <Link
-    href="/contact"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/contact"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    Contact
-  </Link>
-</div>
-
-
+            <Link
+              href="/contact"
+              className={`relative text-sm font-medium text-gray-100  ${
+                pathname === "/contact"
+                  ? "after:w-full"
+                  : "hover:after:w-full after:w-0"
+              } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+            >
+              Contact
+            </Link>
+          </div>
 
           <div className="flex items-center space-x-4">
             <Link
               href="/book-room"
-              className="px-4 py-2 bg-[#00b300] text-gray-100 text-sm font-medium rounded-md shadow hover:bg-[#00b300] transition duration-300 bg-[#00b300] hover:bg-[#00b300]"
+              className="px-4 py-2 bg-[#00b300] text-gray-100 text-sm font-medium rounded-md shadow hover:bg-[#00b300] transition duration-300"
             >
               Book Room
             </Link>
@@ -108,24 +108,43 @@ const Navbar = () => {
               </button>
 
               {profileDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-gray-100 bg-gray-800 shadow-lg rounded-md">
-                  <Link
-                    href="/dashboard"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-gray-200 hover:bg-gray-700"
-                  >
-                    Dashboard
-                  </Link>
-                  <Link
-                    href="/login"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-gray-200 hover:bg-gray-700"
-                  >
-                    Sign In
-                  </Link>
-                  <div className="block px-4 py-2 text-sm text-red-500 font-medium">
-                    <form action={logOut}>
-                      <button type="submit">Log out</button>
-                    </form>
-                  </div>
+                <div className="absolute right-0 mt-2 w-40 bg-gray-100 shadow-lg rounded-md">
+                  {session?.data?.user ? ( // Check if the user is logged in
+                    <>
+                      {/* If user is an admin */}
+                      {session?.data?.user.role === "admin" && (
+                        <Link
+                          href="/dashboard"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          Dashboard
+                        </Link>
+                      )}
+
+                      {/* If user is logged in (common links) */}
+                      <Link
+                        href="/user-profile"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Update Profile
+                      </Link>
+                      <div className="block px-4 py-2 text-sm text-red-500 font-medium">
+                        <form action={logOut}>
+                          <button  type="submit">Log out</button>
+                        </form>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* If user is not logged in */}
+                      <Link
+                        href="/login"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Sign In
+                      </Link>
+                    </>
+                  )}
                 </div>
               )}
             </div>
@@ -154,52 +173,51 @@ const Navbar = () => {
 
         {menuOpen && (
           <div className="md:hidden  rounded-md shadow-lg p-4 mt-2">
-           <div className="flex flex-col justify-center space-y-3 w-fit ">
-  <Link
-    href="/"
-    className={`relative text-sm font-medium text-gray-100   ${
-      pathname === "/"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    Home
-  </Link>
+            <div className="flex flex-col justify-center space-y-3 w-fit ">
+              <Link
+                href="/"
+                className={`relative text-sm font-medium text-gray-100   ${
+                  pathname === "/"
+                    ? "after:w-full"
+                    : "hover:after:w-full after:w-0"
+                } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+              >
+                Home
+              </Link>
 
-  <Link
-    href="/rooms"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/rooms"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    Rooms
-  </Link>
+              <Link
+                href="/rooms"
+                className={`relative text-sm font-medium text-gray-100  ${
+                  pathname === "/rooms"
+                    ? "after:w-full"
+                    : "hover:after:w-full after:w-0"
+                } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+              >
+                Rooms
+              </Link>
 
-  <Link
-    href="/about"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/about"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    About
-  </Link>
+              <Link
+                href="/about"
+                className={`relative text-sm font-medium text-gray-100  ${
+                  pathname === "/about"
+                    ? "after:w-full"
+                    : "hover:after:w-full after:w-0"
+                } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+              >
+                About
+              </Link>
 
-  <Link
-    href="/contact"
-    className={`relative text-sm font-medium text-gray-100  ${
-      pathname === "/contact"
-        ? "after:w-full"
-        : "hover:after:w-full after:w-0"
-    } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
-  >
-    Contact
-  </Link>
-</div>
-
+              <Link
+                href="/contact"
+                className={`relative text-sm font-medium text-gray-100  ${
+                  pathname === "/contact"
+                    ? "after:w-full"
+                    : "hover:after:w-full after:w-0"
+                } after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-gray-100 after:transition-all after:duration-300`}
+              >
+                Contact
+              </Link>
+            </div>
           </div>
         )}
       </div>

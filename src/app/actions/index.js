@@ -7,7 +7,7 @@ export async function socialLogin(formData) {
 }
 
 export async function logOut() {
-  signOut({redirectTo : "/"})
+  await signOut({redirectTo : "/"})
 }
 
 export async function doCredentialLogin (formData) {
@@ -17,7 +17,7 @@ export async function doCredentialLogin (formData) {
       password : formData.get("password"),
       redirect : false
     });
-    console.log(response)
+    // console.log(response)
     return response
   } catch (error) {
     throw new Error(error, "error in index")
