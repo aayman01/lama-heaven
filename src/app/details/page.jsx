@@ -118,17 +118,27 @@ const DetailsPage = () => {
         daysBetween,
       }),
     });
+    const { id } = await response.json();
 
-    const session = await response.json();
-
-    if (session.id) {
-      const { error } = await stripe.redirectToCheckout({
-        sessionId: session.id,
-      });
-      if (error) console.error("Stripe Checkout Error:", error);
-    } else {
-      console.error("Failed to create session:", session.error);
+    const { error } = await stripe.redirectToCheckout({ sessionId: id });
+    if (error) {
+      console.error("Error redirecting to checkout:", error.message);
     }
+
+    // const session = await response.json();
+    // console.log(session);
+    // if (session.payment_status === "paid") {
+    //   console.log("successful");
+    // }
+
+    // if (session.id) {
+    //   const { error } = await stripe.redirectToCheckout({
+    //     sessionId: session.id,
+    //   });
+    //   if (error) console.error("Stripe Checkout Error:", error);
+    // } else {
+    //   console.error("Failed to create session:", session.error);
+    // }
 
     setLoading(false);
   };
