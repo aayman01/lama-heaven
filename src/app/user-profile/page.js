@@ -1,11 +1,40 @@
 'use client'
 import React from 'react';
 import Image  from "next/image";
+import useAxiosPublic from "../../services/useAxiosPublic"
+import { useSession } from 'next-auth/react';
+import { useQuery } from '@tanstack/react-query';
+
 
 const UserProfile = () => {
+  const axiosPublic = useAxiosPublic();
+  const session = useSession();
+  const email = session?.data?.user?.email;
+  console.log("email",email)
+
+
+  const {
+    data: userdata, 
+    isLoading,
+    isFetching,
+  } = useQuery({
+    queryKey: ["userdata",email],
+    queryFn: async () => {
+      const response = await axiosPublic.get(`/api/specific-user/${email}`);
+      return response.data;
+    },
+  });
+
+  console.log(userdata)
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const formData = new FormData(e.target);
+        const name = formData.get('name')
+        const email = formData.get('email')
+        const address = formData.get('address')
+        console.log(name, email, address)
+
 
     }
 
@@ -37,7 +66,6 @@ const UserProfile = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
-                  htmlFor="website"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Your Name:
@@ -51,13 +79,12 @@ const UserProfile = () => {
               </div>
               <div>
                 <label
-                  htmlFor="website"
                   className="block text-sm font-medium text-gray-700"
                 >
                   Your Email:
                 </label>
                 <input
-                  name="name"
+                  name="email"
                   type="text"
                   placeholder="Your email"
                   className="p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
@@ -106,6 +133,7 @@ const UserProfile = () => {
                 <textarea
                   id="bio"
                   rows="3"
+                  name='address'
                   placeholder="Write your address"
                   className="mt-1 p-2 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                 ></textarea>
