@@ -12,9 +12,9 @@ export const {
   signIn,
   signOut,
 } = NextAuth({
-  // session: {
-  //   strategy: "jwt",
-  // },
+  session: {
+    strategy: "jwt",
+  },
   providers: [
     CredentialsProvider({
       async authorize(credentials) {
