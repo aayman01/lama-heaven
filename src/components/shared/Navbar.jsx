@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { logOut } from "../../app/actions/index";
-import {useSession} from "next-auth/react"
+import {signOut, useSession} from "next-auth/react"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -109,23 +109,42 @@ const Navbar = () => {
 
               {profileDropdownOpen && (
                 <div className="absolute right-0 mt-2 w-40 bg-gray-100 shadow-lg rounded-md">
-                  <Link
-                    href="/dashboard"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Dashboard
-                  </Link>
-                  <Link
-                    href="/login"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                  >
-                    Sign In
-                  </Link>
-                  <div className="block px-4 py-2 text-sm text-red-500 font-medium">
-                    <form action={logOut}>
-                      <button type="submit">Log out</button>
-                    </form>
-                  </div>
+                  {session?.data?.user ? ( // Check if the user is logged in
+                    <>
+                      {/* If user is an admin */}
+                      {session?.data?.user.role === "admin" && (
+                        <Link
+                          href="/dashboard"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                        >
+                          Dashboard
+                        </Link>
+                      )}
+
+                      {/* If user is logged in (common links) */}
+                      <Link
+                        href="/user-profile"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Update Profile
+                      </Link>
+                      <div className="block px-4 py-2 text-sm text-red-500 font-medium">
+                        <form action={logOut}>
+                          <button  type="submit">Log out</button>
+                        </form>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      {/* If user is not logged in */}
+                      <Link
+                        href="/login"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        Sign In
+                      </Link>
+                    </>
+                  )}
                 </div>
               )}
             </div>

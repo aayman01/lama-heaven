@@ -7,7 +7,7 @@ export async function socialLogin(formData) {
 }
 
 export async function logOut() {
-  signOut({redirectTo : "/"})
+  await signOut({redirectTo : "/"})
 }
 
 export async function doCredentialLogin (formData) {
