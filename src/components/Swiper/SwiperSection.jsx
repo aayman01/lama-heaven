@@ -14,7 +14,6 @@ import image4 from "/public/assets/img4.png";
 
 const SwiperSection = ({ fakeData }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
-  console.log(fakeData);
 
   return (
     <>

@@ -13,7 +13,9 @@ import {
   TbPool,
   TbPoolOff,
 } from "react-icons/tb";
+import DetailsRightSide from "../../components/DetailsRightSide";
 
+import { loadStripe } from "@stripe/stripe-js";
 import {
   MdDining,
   MdElectricBolt,
@@ -23,6 +25,9 @@ import {
 } from "react-icons/md";
 import { PiBowlSteam } from "react-icons/pi";
 import SwiperSection from "../../components/Swiper/SwiperSection";
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+);
 
 const DetailsPage = () => {
   const today = new Date().toISOString().split("T")[0];
@@ -33,7 +38,7 @@ const DetailsPage = () => {
   const [children, setChildren] = useState(0);
   const [isAdultsInputVisible, setIsAdultsInputVisible] = useState(false);
   const [isChildrenInputVisible, setIsChildrenInputVisible] = useState(false);
-  const [rate, setRate] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const [checkIn, setCheckIn] = useState(today);
   const [checkOut, setCheckOut] = useState(formattedTomorrow); // can not check out in the day of check in
@@ -57,11 +62,6 @@ const DetailsPage = () => {
 
   const additionServiceCardDesign =
     "flex gap-6 items-center bg-[#FFF9EF] text-black py-5 px-4 rounded-lg";
-
-  const handleChange = (e) => {
-    const rate1 = e.target.value;
-    setRate(rate1);
-  };
 
   const handleCheckIn = (e) => {
     const selectedDate = e.target.value;
@@ -104,11 +104,33 @@ const DetailsPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    calculateDays(checkIn, checkOut);
 
-    console.log(rate);
-    // console.log(checkIn, checkOut, adults, children, daysBetween);
-    console.log(daysBetween);
+    setLoading(true);
+    const stripe = await stripePromise;
+
+    const response = await fetch("/api/create-checkout-session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        price: fakeData.price,
+        daysBetween,
+      }),
+    });
+
+    const session = await response.json();
+
+    if (session.id) {
+      const { error } = await stripe.redirectToCheckout({
+        sessionId: session.id,
+      });
+      if (error) console.error("Stripe Checkout Error:", error);
+    } else {
+      console.error("Failed to create session:", session.error);
+    }
+
+    setLoading(false);
   };
 
   const fakeData = {
@@ -269,203 +291,21 @@ const DetailsPage = () => {
 
         {/* right part  */}
         {/* form item  */}
-        <div className=" text-black p-6 w-full px-10 py-12 lg:w-[440px] mx-auto rounded-lg shadow-md flex-1">
-          <div className="flex justify-between items-stretch">
-            <h2 className="text-lg font-medium mb-4">Reserve:</h2>
-            <p className="text-lg font-semibold mb-6">
-              <span className="text-[#80ff80]">{fakeData.price}৳</span>/night
-            </p>
-          </div>
-          <form onSubmit={handleSubmit}>
-            {/* Check-In */}
-            <div className="mb-4 ">
-              <label
-                htmlFor="check-in"
-                className="block text-sm font-medium mb-1"
-              >
-                Check In
-              </label>
-              <input
-                type="date"
-                id="check-in"
-                name="checkIn"
-                className={customColor}
-                value={checkIn}
-                onChange={handleCheckIn}
-              />
-            </div>
-
-            {/* Check-Out */}
-            <div className="mb-4">
-              <label
-                htmlFor="check-out"
-                className="block text-sm font-medium mb-1"
-              >
-                Check Out
-              </label>
-              <input
-                type="date"
-                id="check-out"
-                name="checkOut"
-                className={customColor}
-                value={checkOut}
-                onChange={handleCheckOut}
-                min={new Date(checkIn).toISOString().split("T")[0]}
-              />
-            </div>
-
-            {/* Adults */}
-            <div className="mb-4">
-              <label className="block text-sm font-medium mb-1">Adults</label>
-              <button
-                type="button"
-                onClick={() => setIsAdultsInputVisible(!isAdultsInputVisible)}
-                className={customColor}
-              >
-                Adults: {adults}
-              </button>
-              {isAdultsInputVisible && (
-                <div className="relative mt-2 bg-[#F8F5F1] border border-collapse rounded-lg p-4">
-                  <div className="flex justify-between items-center">
-                    <button
-                      type="button"
-                      onClick={handleDecreaseAdults}
-                      className={customBtnColor}
-                    >
-                      -
-                    </button>
-                    <input
-                      type="number"
-                      value={adults}
-                      readOnly
-                      className={customBtnColor}
-                    />
-                    <button
-                      type="button"
-                      onClick={handleIncreaseAdults}
-                      className={customBtnColor}
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Children */}
-            <div className="mb-4">
-              <label className="block text-sm font-medium mb-1">Children</label>
-              <button
-                type="button"
-                aria-expanded={isChildrenInputVisible}
-                onClick={() =>
-                  setIsChildrenInputVisible(!isChildrenInputVisible)
-                }
-                className={customColor}
-              >
-                Children: {children}
-              </button>
-              {isChildrenInputVisible && (
-                <div className="relative mt-2 w-[250px] bg-[#F8F5F1] border border-collapse rounded-lg p-4">
-                  <div className="flex justify-between items-center">
-                    <button
-                      type="button"
-                      onClick={handleDecreaseChildren}
-                      className={customBtnColor}
-                    >
-                      -
-                    </button>
-                    <input
-                      type="number"
-                      value={children}
-                      readOnly
-                      className={customBtnColor}
-                    />
-                    <button
-                      type="button"
-                      onClick={handleIncreaseChildren}
-                      className={customBtnColor}
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Rate */}
-            <div className="mb-4">
-              <label htmlFor="rate" className="block text-sm font-medium mb-1">
-                Selected Rate
-              </label>
-              <select
-                name="rate"
-                className={customColor}
-                onChange={handleChange}
-              >
-                <option
-                  className="bg-black hover:text-blue-500 text-white"
-                  value=""
-                >
-                  Select one
-                </option>
-                <option
-                  className="bg-black hover:text-blue-500 text-white"
-                  value="regular price1"
-                >
-                  Regular Price1
-                </option>
-                <option
-                  className="bg-black hover:text-blue-500 text-white"
-                  value="regular price2"
-                >
-                  Regular Price2
-                </option>
-                <option
-                  className="bg-black hover:text-blue-500 text-white"
-                  value="regular price3"
-                >
-                  Regular Price3
-                </option>
-                <option
-                  className="bg-black hover:text-blue-500 text-white"
-                  value="regular price4"
-                >
-                  Regular Price4
-                </option>
-                <option
-                  className="bg-black hover:text-blue-500 text-white"
-                  value="regular price5"
-                >
-                  Regular Price5
-                </option>
-                <option
-                  className="bg-black hover:text-blue-500 text-white"
-                  value="regular price6"
-                >
-                  Regular Price6
-                </option>
-              </select>
-            </div>
-
-            {/* Total Cost */}
-            <div className={customColor}>
-              <p className="text-lg font-semibold">
-                Total Cost{" "}
-                <span className="text-yellow-500 font-bold float-right">
-                  8,000৳
-                </span>
-              </p>
-            </div>
-
-            <button
-              type="submit"
-              className="border border-[#80ff80] text-black mt-4 hover:bg-[#80ff80] w-full hover:text-white py-3 px-5 rounded-lg duration-500"
-            >
-              Book Your Stay Now
-            </button>
-          </form>
-        </div>
+        <DetailsRightSide
+          fakeData={fakeData}
+          handleCheckIn={handleCheckIn}
+          handleCheckOut={handleCheckOut}
+          handleSubmit={handleSubmit}
+          customBtnColor={customBtnColor}
+          customColor={customColor}
+          checkIn={checkIn}
+          checkOut={checkOut}
+          adults={adults}
+          isAdultsInputVisible={isAdultsInputVisible}
+          isChildrenInputVisible={isChildrenInputVisible}
+          child={children}
+          daysBetween={daysBetween}
+        />
       </div>
     </div>
   );
