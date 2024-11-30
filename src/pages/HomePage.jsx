@@ -5,6 +5,7 @@ import OfferCard from "@/components/OfferCard";
 import Banner from "@/components/shared/Banner";
 import React from "react";
 
+
 export default async function HomePage() {
 
   return (
@@ -20,9 +21,8 @@ export default async function HomePage() {
         <DeliciousFood />
 
         <FeaturedRooms></FeaturedRooms>
-        
       </div>
     </div>
-  )
+  );
 }
 

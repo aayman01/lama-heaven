@@ -28,7 +28,7 @@ const Navbar = () => {
               src="/logo2.png"
               alt="Lama Heaven"
             />
-            <h1 className="text-lg sm:text-xl font-bold text-[#00b300] text-[#00b300]">
+            <h1 className="text-lg sm:text-xl font-bold text-[#00b300]">
               Lama Heaven
             </h1>
           </div>
@@ -81,7 +81,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <Link
               href="/book-room"
-              className="px-4 py-2 bg-[#00b300] text-gray-100 text-sm font-medium rounded-md shadow hover:bg-[#00b300] transition duration-300 bg-[#00b300] hover:bg-[#00b300]"
+              className="px-4 py-2 bg-[#00b300] text-gray-100 text-sm font-medium rounded-md shadow hover:bg-[#00b300] transition duration-300"
             >
               Book Room
             </Link>
@@ -108,16 +108,16 @@ const Navbar = () => {
               </button>
 
               {profileDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-gray-100 bg-gray-800 shadow-lg rounded-md">
+                <div className="absolute right-0 mt-2 w-40 bg-gray-100 shadow-lg rounded-md">
                   <Link
                     href="/dashboard"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-gray-200 hover:bg-gray-700"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Dashboard
                   </Link>
                   <Link
                     href="/login"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 text-gray-200 hover:bg-gray-700"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     Sign In
                   </Link>
