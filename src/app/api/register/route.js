@@ -34,8 +34,3 @@ export const POST = async(request) =>{
     }
 }
 
-export const fetchAllUsers = async () => {
-  await dbConnect();
-  const users = await User.find({});
-  return users;
-};
