@@ -3,12 +3,16 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Divide } from "lucide-react";
+} from ".//ui/accordion";
+import React from 'react';
 
-export default function faq() {
+const Faq = () => {
   return (
-    <div>
+    <div className="px-4 mb-10">
+      <div>
+        <h1 className="text-2xl font-bold mb-2 text-center">FAQ</h1>
+        <h2 className="text-3xl mb-16 text-center">Frequently Asking Question</h2>
+      </div>
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>Do you offer group bookings?</AccordionTrigger>
@@ -77,4 +81,6 @@ export default function faq() {
       </Accordion>
     </div>
   );
-}
+};
+
+export default Faq;
