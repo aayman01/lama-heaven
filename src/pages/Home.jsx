@@ -7,7 +7,7 @@ import React from "react";
 import Faq from "../components/Faq"
 
 
-export default async function Home() {
+export default function Home() {
 
   return (
     <div>
@@ -21,7 +21,6 @@ export default async function Home() {
           ))}
         </div>
         <DeliciousFood />
-
         <FeaturedRooms></FeaturedRooms>
         <Faq></Faq>
       </div>
