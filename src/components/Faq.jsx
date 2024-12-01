@@ -9,7 +9,7 @@ import {
 import { Divide } from "lucide-react"
 export default function Faq() {
     return (
-        <div>
+        <div className=' mb-20'>
             <h1 className=" text-4xl mb-4 text-black flex justify-center  "> Frequently Asked Question</h1>
 
             <div className=" grid grid-cols-1 md:grid-cols-2 p-2 gap-5 " >
