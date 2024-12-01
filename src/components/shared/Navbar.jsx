@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { logOut } from "../../app/actions/index";
-import {signOut, useSession} from "next-auth/react"
+import { useSession} from "next-auth/react"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
