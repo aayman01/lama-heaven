@@ -7,7 +7,7 @@ import React from "react";
 import Faq from "../components/Faq"
 
 
-export default async function HomePage() {
+export default async function Home() {
 
   return (
     <div>
