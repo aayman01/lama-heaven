@@ -7,7 +7,7 @@ import Banner from "@/components/shared/Banner";
 import React from "react";
 
 
-export default async function HomePage() {
+export default function Home() {
 
   return (
     <div>
@@ -20,7 +20,6 @@ export default async function HomePage() {
           ))}
         </div>
         <DeliciousFood />
-
         <FeaturedRooms></FeaturedRooms>
         <Faq></Faq>
       </div>
