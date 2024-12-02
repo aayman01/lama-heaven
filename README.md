@@ -1,6 +1,6 @@
-# Bluebird Hotel Management System 🌟
+# Lama-Heaven Management System 🌟
 
-Bluebird is a comprehensive hotel management system designed to streamline the operations of a hotel, offering features like room booking, customer management, billing, and more. Built with a modern tech stack, Bluebird ensures efficiency and ease of use.
+Lama-Heaven is a comprehensive hotel management system designed to streamline the operations of a hotel, offering features like room booking, customer management, billing, and more. Built with a modern tech stack, Lama-Heaven ensures efficiency and ease of use.
 
 ---
 
@@ -29,7 +29,7 @@ Bluebird is a comprehensive hotel management system designed to streamline the o
 
 ### Other Tools:
 - **Stripe**: For secure and seamless payment processing.  
-- **Firebase Authentication**: For user login and management.
+- **Next-auth Authentication**: For user login and management.
 
 ---
 
