@@ -13,7 +13,6 @@ import {
   TbPool,
   TbPoolOff,
 } from "react-icons/tb";
-import DetailsRightSide from "../../components/DetailsRightSide";
 
 import { loadStripe } from "@stripe/stripe-js";
 import {
@@ -24,7 +23,8 @@ import {
   MdTableBar,
 } from "react-icons/md";
 import { PiBowlSteam } from "react-icons/pi";
-import SwiperSection from "../../components/Swiper/SwiperSection";
+import DetailsRightSide from "../../../components/DetailsRightSide";
+import SwiperSection from "../../../components/Swiper/SwiperSection";
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 );
