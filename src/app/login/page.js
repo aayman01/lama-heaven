@@ -22,7 +22,7 @@ const LoginPage = () => {
         router.push('/')
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       setError("Check your credentials")
     }
   };

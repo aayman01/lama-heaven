@@ -22,8 +22,8 @@ const OfferCard = () => {
         <li>Sea view side</li>
       </ul>
       <Link
-        href={"/details"}
-        className="w-full py-2 flex justify-center items-center border border-[#009DFF] hover:bg-[#009DFF] text-[#009DFF] hover:text-white"
+        href={"/rooms"}
+        className="w-full py-2 flex justify-center items-center bg-[#00b300] text-gray-100 text-sm font-medium rounded-md shadow hover:bg-[#008000] transition duration-300"
       >
         Book Now
       </Link>

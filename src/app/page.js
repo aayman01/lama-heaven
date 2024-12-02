@@ -1,12 +1,12 @@
 import Footer from "../components/Footer.jsx";
-import Navbar from "../components/shared/Navbar.jsx";
-import HomePage from "../pages/HomePage";
+// import Navbar from "../components/shared/Navbar.jsx";
+import Home from "../pages/Home";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div>
-      <Navbar></Navbar>
-      <HomePage></HomePage>
+      {/* <Navbar></Navbar> */}
+      <Home></Home>
       <Footer />
     </div>
   );
